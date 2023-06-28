@@ -1058,7 +1058,7 @@ export default {
         "id": "1269"
     },
     "sundaeswap": {
-        "enabled": true,
+        "enabled": false,
         "id": "1302"
     },
     "wx.network": {
@@ -1335,7 +1335,6 @@ export default {
         id: "291"
     },
     "archerswap": {
-        disabled: true,
         enabled: true,
         id: "2648"
     },
@@ -1353,6 +1352,7 @@ export default {
         id: "2674"
     },
     "ramses-exchange": {
+        parentId: "Ramses Exchange",
         enabled: true,
         id: "2675"
     },
@@ -1605,5 +1605,85 @@ export default {
         parentId: "SUN.io",
         "enabled": true,
         "id": "3005"
+    },
+    "pulsex-v1": {
+        parentId: "PulseX",
+        "enabled": true,
+        "id": "2995",
+        cleanRecordsConfig: {
+            genuineSpikes: {
+                "1686009600": true,
+            },
+        }
+    },
+    "pulsex-v2": {
+        parentId: "PulseX",
+        "enabled": true,
+        "id": "3060",
+        cleanRecordsConfig: {
+            genuineSpikes: {
+                "1686009600": true,
+            },
+        }
+    },
+    "fathom-dex": {
+        "enabled": true,
+        "id": "3077"
+    },
+    "heraswap": {
+        "enabled": true,
+        "id": "3089"
+    },
+    "miaswap": {
+        "enabled": true,
+        "id": "3090"
+    },
+    "hummus": {
+        "enabled": true,
+        "id": "1715"
+    },
+    "tokenlon": {
+        "enabled": true,
+        "id": "405"
+    },
+    "ramses-exchange-v2": {
+        parentId: "Ramses Exchange",
+        enabled: true,
+        id: "3096"
+    },
+    "MantisSwap": {
+        enabled: true,
+        id: "2702"
+    },
+    "abcdefx": {
+        enabled: true,
+        id: "2376"
+    },
+    "thalaswap": {
+        enabled: true,
+        id: "2795"
+    },
+    "pearlfi": {
+        enabled: true,
+        id: "3121"
+    },
+    "ambient": {
+        enabled: true,
+        id: "3104"
+    },
+    "doveswap": {
+        "enabled": true,
+        "id": "2763",
+        parentId: "Dove Swap",
+        "protocolsData": {
+            "v3": {
+                "id": "2809",
+                "enabled": true,
+            }
+        },
+    },
+    "litx": {
+        enabled: true,
+        id: "3159"
     }
 } as AdaptorsConfig

@@ -1680,10 +1680,33 @@ export const chainCoingeckoIds = {
     categories: ["EVM"],
     chainid: 369
   },
-  XPLA: {
+  "XPLA": {
     geckoId: "xpla",
     symbol: "XPLA",
     cmcId: "22359",
+    categories: ["Cosmos"],
+  },
+  "Neutron": {
+    geckoId: null,
+    symbol: null,
+    cmcId: null,
+    categories: ["Cosmos"],
+  },
+  "Onus": {
+    geckoId: "onus",
+    symbol: "ONUS",
+    cmcId: "15261",
+    categories: ["EVM"],
+  },
+  "Pokt": {
+    geckoId: "pocket-network",
+    symbol: "POKT",
+    cmcId: "11823",
+  },
+  "Quasar": {
+    geckoId: null,
+    symbol: "QSR",
+    cmcId: null,
     categories: ["Cosmos"],
   },
 } as unknown as {
@@ -1852,6 +1875,8 @@ export function getChainDisplayName(normalizedChain: string, useNewChainNames: b
       return "EthereumClassic"
     case "zksync":
       return useNewChainNames ? "zkSync Lite" : "zkSync"
+    case "zksync era":
+      return "zkSync Era"
     case "godwoken":
       return "Godwoken"
     case "callisto":
@@ -2096,6 +2121,14 @@ export function getChainDisplayName(normalizedChain: string, useNewChainNames: b
       return "Pulse"
     case "xpla":
       return "XPLA"
+    case "neutron":
+      return "Neutron"
+    case "onus":
+      return "Onus"
+    case "pokt":
+      return "Pokt"
+    case "quasar":
+      return "Quasar"
     default:
       return normalizedChain.slice(0, 1).toUpperCase() + normalizedChain.slice(1) // Capitalize first letter
   }

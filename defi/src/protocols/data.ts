@@ -1,6 +1,7 @@
 import { baseIconsUrl } from "../constants";
 import type { Protocol } from "./types";
 import data2 from "./data2";
+import data3 from "./data3";
 
 export type { Protocol };
 /* Audits: Please follow this legend
@@ -66,6 +67,7 @@ const data: Protocol[] = [
     twitter: "WrappedBTC",
     audit_links: ["https://wbtc.network/dashboard/audit"],
     oracles: [],
+    github: ["WrappedBTC"]
   },
   {
     id: "3",
@@ -130,7 +132,8 @@ const data: Protocol[] = [
     module: "harvest/api.js",
     twitter: "harvest_finance",
     audit_links: ["https://github.com/harvest-finance/harvest/tree/master/audits"],
-    governanceID: ["snapshot:harvestfi.eth"]
+    governanceID: ["snapshot:harvestfi.eth"],
+    github: ["harvest-finance", "harvestfi"]
   },
   {
     id: "113",
@@ -153,7 +156,8 @@ const data: Protocol[] = [
     twitter: "iearnfinance",
     audit_links: ["https://github.com/yearn/yearn-audits"],
     language: "Vyper",
-    governanceID: ["snapshot:ybaby.eth", "snapshot:yearn"]
+    governanceID: ["snapshot:ybaby.eth", "snapshot:yearn"],
+    github: ["iearn-finance", "yearn"]
   },
   {
     id: "114",
@@ -203,6 +207,7 @@ const data: Protocol[] = [
     },
     governanceID: ["snapshot:synthetix-stakers-poll.eth"],
     stablecoins: ["susd", "seur"],
+    github: ["Synthetixio"]
   },
   {
     id: "116",
@@ -221,7 +226,7 @@ const data: Protocol[] = [
     chains: ["Ethereum"],
     module: "balancer-v1/index.js",
     twitter: "BalancerLabs",
-    audit_links: ["https://docs.balancer.fi/core-concepts/security/audits"],
+    audit_links: ["https://docs.balancer.fi/reference/contracts/security.html#audits"],
     parentProtocol: "parent#balancer",
   },
   {
@@ -244,7 +249,8 @@ const data: Protocol[] = [
     twitter: "renprotocol",
     audit_links: ["https://github.com/renproject/ren/wiki/Audits"],
     oracles: [],
-    governanceID: ["snapshot:ren-project.eth"]
+    governanceID: ["snapshot:ren-project.eth"],
+    github: ["renproject"]
   },
   {
     id: "118",
@@ -268,6 +274,7 @@ const data: Protocol[] = [
     oracles: ["Chronicle"],
     treasury: "maker.js",
     stablecoins: ["dai"],
+    github: ["makerdao"]
   },
   {
     id: "119",
@@ -326,7 +333,8 @@ const data: Protocol[] = [
     twitter: "Instadapp",
     audit_links: ["https://github.com/Instadapp/dsa-contracts/blob/master/audits/v1_PeckShield_Mar_2020.pdf"],
     treasury: "instadapp.js",
-    governanceID: ["snapshot:instadapp-gov.eth"]
+    governanceID: ["snapshot:instadapp-gov.eth"],
+    github: ["InstaDApp"]
   },
   {
     id: "121",
@@ -370,7 +378,8 @@ const data: Protocol[] = [
     twitter: "NexusMutual",
     audit_links: ["https://nexusmutual.gitbook.io/docs/helpful-resources/audits-and-security"],
     oracles: ["Chainlink"],
-    governanceID: ["snapshot:community.nexusmutual.eth", "specialresolution.nexusmutual.eth"]
+    governanceID: ["snapshot:community.nexusmutual.eth", "specialresolution.nexusmutual.eth"],
+    github: ["NexusMutual"]
   },
   {
     id: "123",
@@ -394,6 +403,7 @@ const data: Protocol[] = [
     oracles: ["Chainlink", "Band"],
     governanceID: ["snapshot:dforcenet.eth"],
     stablecoins: ["dforce-usd"],
+    github: ["dforce-network"]
   },
   {
     id: "124",
@@ -414,6 +424,7 @@ const data: Protocol[] = [
     twitter: null,
     audit_links: ["https://consensys.net/diligence/audits/2020/02/thesis-tbtc-and-keep/"],
     oracles: ["Chronicle"],
+    github: ["keep-network"]
   },
   {
     id: "125",
@@ -456,7 +467,8 @@ const data: Protocol[] = [
       "https://github.com/Loopring/protocols/blob/master/packages/loopring_v3/security_audit/LoopringV3_1_Report_EN.pdf",
     ],
     oracles: ["Chainlink", "Band"],
-    governanceID: ["snapshot:loopringdao.eth"]
+    governanceID: ["snapshot:loopringdao.eth"],
+    github: ["Loopring"]
   },
   {
     id: "127",
@@ -503,6 +515,7 @@ const data: Protocol[] = [
       "https://github.com/peckshield/publications/blob/master/audit_reports/PeckShield-Audit-Report-Hegic-v1.0.pdf",
       "https://github.com/hegic/contracts/blob/main/packages/herge/docs/PeckShield-Audit-Report-Hegic-Herge-Protocol-Upgrade-v1.0.pdf",
     ],
+    github: ["hegic"]
   },
   {
     id: "129",
@@ -520,7 +533,7 @@ const data: Protocol[] = [
     category: "Chain",
     chains: ["Ethereum"],
     module: "xdai/index.js",
-    twitter: "xdaichain",
+    twitter: "gnosischain",
   },
   {
     id: "130",
@@ -531,7 +544,7 @@ const data: Protocol[] = [
     description: "imToken is an easy and secure digital wallet trusted by millions",
     chain: "Ethereum",
     logo: `${baseIconsUrl}/the-tokenized-bitcoin.png`,
-    audits: null,
+    audits: "2",
     audit_note: null,
     gecko_id: null,
     cmcId: null,
@@ -542,8 +555,8 @@ const data: Protocol[] = [
     twitter: "tokenlon",
     audit_links: [
       "https://cure53.de/pentest-report_imtoken.pdf",
-      "https://drive.google.com/file/d/1o7byxnZbhl8PkWpYHnWtxDgUp_cpPO73/view",
     ],
+    github: ["consenlabs"]
   },
   {
     id: "131",
@@ -564,7 +577,8 @@ const data: Protocol[] = [
     twitter: "Barn_Bridge",
     audit_links: ["https://github.com/BarnBridge/BarnBridge-PM/tree/master/audits"],
     oracles: ["Chainlink"],
-    governanceID: ["snapshot:barnbridge.eth"]
+    governanceID: ["snapshot:barnbridge.eth"],
+    github: ["BarnBridge"]
   },
   {
     id: "132",
@@ -603,7 +617,8 @@ const data: Protocol[] = [
     chains: ["Arbitrum"],
     module: "shell/index.js",
     twitter: "ShellProtocol",
-    governanceID: ["snapshot:shellprotocol.eth"]
+    governanceID: ["snapshot:shellprotocol.eth"],
+    github: ["cowri"]
   },
   {
     id: "134",
@@ -623,8 +638,9 @@ const data: Protocol[] = [
     chains: ["Ethereum", "Polygon", "Arbitrum"],
     module: "pickle/index.js",
     twitter: "picklefinance",
-    audit_links: ["https://docs.pickle.finance/faqs/security"],
-    governanceID: ["snapshot:pickle.eth"]
+    audit_links: ["https://docs.pickle.finance/security/audits-and-timelock/smart-contract-audits"],
+    governanceID: ["snapshot:pickle.eth"],
+    github: ["pickle-finance"]
   },
   {
     id: "135",
@@ -672,7 +688,8 @@ const data: Protocol[] = [
       "snapshot:fuse.eth", 
       "eip155:1:0x91d9c2b5cF81D55a5f2Ecc0fC84E62f9cd2ceFd6",
       'eip155:1:0x637deEED4e4deb1D222650bD4B64192abf002c00',
-    ]
+    ],
+    github: ["Rari-Capital"]
   },
   {
     id: "137",
@@ -712,7 +729,8 @@ const data: Protocol[] = [
     twitter: "hakkafinance",
     audit_links: ["https://github.com/hakkafinance/audit-reports"],
     oracles: ["Chainlink"],
-    governanceID: ["snapshot:hakka.eth"]
+    governanceID: ["snapshot:hakka.eth"],
+    github: ["hakkafinance"]
   },
   {
     id: "139",
@@ -796,6 +814,7 @@ const data: Protocol[] = [
       "https://github.com/crypticlabs/swerve-audit-report/blob/master/Swerve%20Finance%20Audit%20-%20by%20Cryptic%20Labs%20v3.pdf",
     ],
     forkedFrom: ["Curve"],
+    github: ["user:SwerveFinance"]
   },
   {
     id: "143",
@@ -819,6 +838,7 @@ const data: Protocol[] = [
       "https://github.com/trailofbits/publications/blob/master/reviews/amp.pdf",
     ],
     oracles: ["Chainlink"],
+    github: ["flexahq"]
   },
   {
     id: "144",
@@ -843,7 +863,8 @@ const data: Protocol[] = [
     audit_links: ["https://docs.dydx.exchange/#independent-audits"],
     oracles: ["Chainlink"],
     language: "Cairo",
-    governanceID: ["snapshot:dydxgov.eth"]
+    governanceID: ["snapshot:dydxgov.eth"],
+    github: ["dydxfoundation", "dydxprotocol"]
   },
   {
     id: "145",
@@ -863,6 +884,7 @@ const data: Protocol[] = [
     chains: ["Solana"],
     module: "serum.js",
     twitter: "ProjectSerum",
+    github: ["project-serum", "SerumTaxTime"]
   },
   {
     id: "146",
@@ -884,7 +906,8 @@ const data: Protocol[] = [
     twitter: "BreederDodo",
     audit_links: ["https://github.com/DODOEX/docs/blob/master/docs/audit.md"],
     oracles: ["Chainlink"],
-    governanceID: ["snapshot:dodobird.eth"]
+    governanceID: ["snapshot:dodobird.eth"],
+    github: ["DODOEX"]
   },
   {
     id: "148",
@@ -905,7 +928,8 @@ const data: Protocol[] = [
     twitter: "TornadoCash",
     audit_links: ["https://tornado.cash/#faq"],
     oracles: [],
-    treasury: "tornado-cash.js"
+    treasury: "tornado-cash.js",
+    github: ["tornadocash"]
   },
   {
     id: "149",
@@ -925,8 +949,9 @@ const data: Protocol[] = [
     chains: ["Ethereum"],
     module: "bprotocol/index.js",
     twitter: "bprotocoleth",
-    audit_links: ["https://app.bprotocol.org/risk"],
+    audit_links: ["https://docs.bprotocol.org/technical-documentation/bug-bounty"],
     oracles: ["Chainlink"],
+    github: ["backstop-protocol"]
   },
   {
     id: "150",
@@ -954,7 +979,8 @@ const data: Protocol[] = [
       "snapshot:idlefinance.eth",
       "eip155:1:0x3D5Fc645320be0A085A32885F078F7121e5E5375",
       "eip155:1:0x2256b25CFC8E35c3135664FD03E77595042fe31B"
-    ]
+    ],
+    github: ["Idle-Labs"]
   },
   {
     id: "151",
@@ -998,6 +1024,7 @@ const data: Protocol[] = [
     twitter: "AugurProject",
     audit_links: ["https://github.com/AugurProject/augur-audits"],
     oracles: ["Chainlink"],
+    github: ["AugurProject"]
   },
   {
     id: "153",
@@ -1018,6 +1045,7 @@ const data: Protocol[] = [
     twitter: "CoFiXProtocol",
     oracles: ["Nest"],
     audit_links: ["https://github.com/Computable-Finance/CoFiX/tree/master/security_audit"],
+    github: ["Computable-Finance"]
   },
   {
     id: "155",
@@ -1038,7 +1066,8 @@ const data: Protocol[] = [
     module: "keeper-dao/index.js",
     treasury: "keeperdao.js",
     twitter: "rook",
-    governanceID: ["snapshot:rook.eth"]
+    governanceID: ["snapshot:rook.eth"],
+    github: ["keeperdao"]
   },
   {
     id: "156",
@@ -1058,6 +1087,7 @@ const data: Protocol[] = [
     chains: ["Ethereum"],
     module: "zlot/index.js",
     twitter: "zLOTFinance",
+    github: ["rueisnax/zlot-finance-governance-staking-subgraph"]
   },
   {
     id: "157",
@@ -1076,16 +1106,17 @@ const data: Protocol[] = [
     chains: ["Ethereum"],
     module: "88mph/index.js",
     twitter: "88mphapp",
-    audit_links: ["https://docs.88mph.app/main-products/security-and-audits#is-88mph-audited"],
+    audit_links: ["https://docs.88mph.app/developer-docs/security"],
     oracles: ["Chainlink"],
-    governanceID: ["snapshot:88mph.eth"]
+    governanceID: ["snapshot:88mph.eth"],
+    github: ["88mphapp"]
   },
   {
     id: "158",
     name: "Dracula",
     address: "0xb78B3320493a4EFaa1028130C5Ba26f0B6085Ef8",
     symbol: "DRC",
-    url: "https://dracula.sucks/",
+    url: "https://dracula-metaverse.com/",
     description:
       "Meta-level vampirism concept implemented in Dracula protocol delivers higher profits while mitigating those risks.",
     chain: "Ethereum",
@@ -1099,7 +1130,8 @@ const data: Protocol[] = [
     module: "dracula.js",
     twitter: "DraculaProtocol",
     audit_links: ["https://solidity.finance/audits/Dracula/"],
-    governanceID: ["snapshot:draculasucks.eth"]
+    governanceID: ["snapshot:draculasucks.eth"],
+    github: ["Dracula-Protocol"]
   },
   {
     id: "159",
@@ -1121,6 +1153,7 @@ const data: Protocol[] = [
     twitter: "GrowthDefi",
     audit_links: ["https://consensys.net/diligence/audits/2020/12/growth-defi-v1/"],
     oracles: ["Chainlink"],
+    github: ["GrowthDeFi"]
   },
   {
     id: "160",
@@ -1166,7 +1199,8 @@ const data: Protocol[] = [
       "https://github.com/BoringDAO/boringDAO-contract/blob/master/peckshield-audit-report-boringdao-v1.0rc.pdf",
     ],
     oracles: ["Chainlink"],
-    governanceID: ["snapshot:boringvote.eth"]
+    governanceID: ["snapshot:boringvote.eth"],
+    github: ["BoringDAO"]
   },
   {
     id: "162",
@@ -1208,6 +1242,7 @@ const data: Protocol[] = [
     module: "fortube/index.js",
     twitter: "ForTubeFi",
     audit_links: ["https://for.tube/security"],
+    github: ["thefortube"]
   },
   {
     id: "164",
@@ -1249,7 +1284,8 @@ const data: Protocol[] = [
     module: "cover.js",
     twitter: "CoverProtocol",
     audit_links: ["https://github.com/CoverProtocol/cover-security/tree/master/audits"],
-    governanceID: ["snapshot:cover-protocol.eth"]
+    governanceID: ["snapshot:cover-protocol.eth"],
+    github: ["CoverProtocol"]
   },
   {
     id: "166",
@@ -1269,7 +1305,8 @@ const data: Protocol[] = [
     module: "truefi/index.js",
     twitter: "TrustToken",
     audit_links: ["https://github.com/trusttoken/audits/tree/master/TrueFi"],
-    governanceID: ["snapshot:truefigov.eth", 'eip155:1:0x585CcA060422ef1779Fb0Dd710A49e7C49A823C9',]
+    governanceID: ["snapshot:truefigov.eth", 'eip155:1:0x585CcA060422ef1779Fb0Dd710A49e7C49A823C9',],
+    github: ["trusttoken"]
   },
   {
     id: "167",
@@ -1291,7 +1328,8 @@ const data: Protocol[] = [
     treasury: "piedao.js",
     twitter: "PieDAO_Defi",
     audit_links: ["https://docs.piedao.org/technical/audits"],
-    governanceID: ["snapshot:piedao.eth"]
+    governanceID: ["snapshot:piedao.eth"],
+    github: ["pie-dao"]
   },
   {
     id: "168",
@@ -1311,6 +1349,7 @@ const data: Protocol[] = [
     module: "dev.js",
     twitter: "devprtcl",
     audit_links: ["https://github.com/dev-protocol/protocol/blob/main/docs/audit-report__quantstamp--sept-15-2020.pdf"],
+    github: ["dev-protocol"]
   },
   {
     id: "169",
@@ -1330,6 +1369,7 @@ const data: Protocol[] = [
     module: "basis-cash.js",
     twitter: "BasisCash",
     audit_links: ["https://github.com/basisdollar/basisdollar-protocol#audit"],
+    github: ["Basis-Cash"]
   },
   {
     id: "170",
@@ -1351,6 +1391,7 @@ const data: Protocol[] = [
     twitter: "fin_nexus",
     audit_links: ["https://github.com/Phoenix-Finance/Pdfs/blob/master/PeckShield-Audit-FinnexusOptionsV1.0.pdf"],
     oracles: ["Chainlink", "Band"],
+    github: ["FinNexus"]
   },
   {
     id: "171",
@@ -1369,6 +1410,8 @@ const data: Protocol[] = [
     chains: ["Ethereum"],
     module: "synlev.js",
     twitter: null,
+    github: ["SynLev"],
+    rugged: true
   },
   {
     id: "172",
@@ -1393,7 +1436,8 @@ const data: Protocol[] = [
       "https://gist.github.com/bernard-wagner/8a96ae7b9746ba8394dc6c16202a6b64",
     ],
     twitter: "indexcoop",
-    governanceID: ["snapshot:index-coop.eth"]
+    governanceID: ["snapshot:index-coop.eth"],
+    github: ["SetProtocol/index-coop"]
   },
   {
     id: "173",
@@ -1425,6 +1469,7 @@ const data: Protocol[] = [
     ],
     governanceID: ["snapshot:badgerdao.eth"],
     oracles: [],
+    github: ["Badger-Finance"]
   },
   {
     id: "174",
@@ -1444,6 +1489,7 @@ const data: Protocol[] = [
     module: "bt-finance.js",
     twitter: "btdotfinance",
     audit_links: ["https://github.com/btdotfinance/bt-finance/tree/master/audits"],
+    github: ["btdotfinance/bt-finance"]
   },
   {
     id: "175",
@@ -1896,7 +1942,7 @@ const data: Protocol[] = [
     name: "Ooki",
     address: "0x0De05F6447ab4D22c8827449EE4bA2D5C288379B",
     symbol: "OOKI",
-    url: "https://hello.ooki.com",
+    url: "https://ipfs-ooki-eth.ipns.dweb.link/lend/asset",
     description:
       "Ooki is a flexible decentralized finance protocol for margin trading, borrowing, lending and staking on multiple blockchains.",
     chain: "Ethereum",
@@ -2167,7 +2213,7 @@ const data: Protocol[] = [
     chains: ["Ethereum"],
     module: "yaxis/index.js",
     twitter: "yaxis_project",
-    audit_links: ["https://github.com/yaxis-project/SushiSwap/tree/main/audits"],
+    audit_links: ["https://github.com/yaxis-project/yaxis-audit"],
     governanceID: ["snapshot:yaxis.eth"]
   },
   {
@@ -2538,7 +2584,7 @@ const data: Protocol[] = [
     module: "futureswap/index.js",
     treasury: "futureswap.js",
     twitter: "futureswapx",
-    audit_links: ["https://docs.futureswap.com/protocol/audits"],
+    audit_links: ["https://docs.futureswap.com/other/audits"],
     oracles: ["Chainlink"],
   },
   {
@@ -2764,7 +2810,7 @@ const data: Protocol[] = [
     module: "pooltogether/index.js",
     treasury: "pooltogether.js",
     twitter: "PoolTogether_",
-    audit_links: ["https://docs.pooltogether.com/security/audits-and-testing"],
+    audit_links: ["https://docs.pooltogether.com/security/audits"],
     oracles: ["Chainlink"],
     governanceID: [
       "snapshot:pooltogether.eth", 
@@ -2821,7 +2867,7 @@ const data: Protocol[] = [
     name: "Energiswap",
     address: "0x1416946162b1c2c871a73b07e932d2fb6c932069",
     symbol: "NRG",
-    url: "https://www.energiswap.exchange",
+    url: "https://app.energiswap.exchange/#/swap",
     description: "A fully decentralized protocol for automated liquidity provision on Energi.",
     chain: "Energi",
     logo: `${baseIconsUrl}/energiswap.jpg`,
@@ -2876,7 +2922,7 @@ const data: Protocol[] = [
     oracles: ["Chainlink"],
     forkedFrom: ["Compound"],
   },
-  {
+  /*{
     id: "245",
     name: "Secret Network",
     address: null,
@@ -2894,7 +2940,7 @@ const data: Protocol[] = [
     chains: ["Secret"],
     module: "scrt.js",
     twitter: "SecretNetwork",
-  },
+  },*/
   {
     id: "246",
     name: "Pangolin",
@@ -3317,7 +3363,7 @@ const data: Protocol[] = [
     chains: ["Ethereum"],
     module: "reflexer/index.js",
     twitter: "reflexerfinance",
-    audit_links: ["https://reflexer.finance/about/"],
+    audit_links: ["https://docs.reflexer.finance/risk/geb-risks"],
     oracles: ["Chainlink"],
     governanceID: ["eip155:1:0x7a6BBe7fDd793CC9ab7e0fc33605FCd2D19371E8"],
     stablecoins: ["rai-reflex-index"]
@@ -3340,7 +3386,7 @@ const data: Protocol[] = [
     chains: ["Ethereum"],
     module: "set-protocol/index.js",
     twitter: "SetProtocol",
-    audit_links: ["https://www.tokensets.com/security"],
+    audit_links: ["https://www.tokensets.com/#/security"],
     oracles: ["Chainlink"],
   },
   {
@@ -4171,7 +4217,7 @@ const data: Protocol[] = [
     chains: ["Polygon"],
     module: "quickswap/index.js",
     twitter: "QuickswapDEX",
-    audit_links: ["https://contractsecurity.io/quick-audit-report/"],
+    audit_links: ["https://docs.quickswap.exchange/concepts/advanced-topics/04-security"],
     forkedFrom: ["Uniswap V2"], 
     parentProtocol: "parent#quickswap",
   },
@@ -7367,7 +7413,7 @@ The eWIT token is a custodial, wrapped version of the Witnet coin managed by the
   },
   {
     id: "457",
-    name: "Fuji Finance",
+    name: "Fuji V1",
     address: null,
     symbol: "-",
     url: "https://www.fujidao.org",
@@ -7378,7 +7424,7 @@ The eWIT token is a custodial, wrapped version of the Witnet coin managed by the
     audit_note: null,
     gecko_id: null,
     cmcId: null,
-    category: "Lending",
+    category: "Lending",  
     chains: ["Ethereum"],
     module: "fujidao/index.js",
     audit_links: [
@@ -7386,6 +7432,7 @@ The eWIT token is a custodial, wrapped version of the Witnet coin managed by the
       "https://github.com/Fujicracy/fuji-protocol/blob/main/audits/Fuji_TrailOfBits_2021-11.pdf",
     ],
     twitter: "FujiFinance",
+    parentProtocol: "parent#fuji-finance"
   },
   {
     id: "458",
@@ -8525,7 +8572,7 @@ The eWIT token is a custodial, wrapped version of the Witnet coin managed by the
   },
   {
     id: "513",
-    name: "QuipuSwap",
+    name: "QuipuSwap V1",
     address: "tezos:KT193D4vozYnhGJQVtw7CoxxqphqUEEwK6Vb",
     symbol: "QUIPU",
     url: "https://quipuswap.com",
@@ -8545,6 +8592,7 @@ The eWIT token is a custodial, wrapped version of the Witnet coin managed by the
       "https://leastauthority.com/static/publications/LeastAuthority_Tezos_Foundation_QuipuSwap_Smart_Contracts_Final_Audit_Report.pdf",
       "https://github.com/runtimeverification/publications/blob/main/reports/smart-contracts/quipuswap-stableswap.pdf",
     ],
+    parentProtocol: "parent#quipuswap"
   },
   {
     id: "514",
@@ -9232,7 +9280,7 @@ The eWIT token is a custodial, wrapped version of the Witnet coin managed by the
     audit_note: null,
     gecko_id: "pnetwork",
     cmcId: "5794",
-    category: "Cross Chain",
+    category: "Bridge",
     chains: ["Ethereum", "EOS", "Telos", "Binance"],
     module: "pnetwork.js",
     treasury: "p-network.js",
@@ -10050,8 +10098,8 @@ The eWIT token is a custodial, wrapped version of the Witnet coin managed by the
     category: "Uncollateralized Lending",
     chains: ["Ethereum"],
     module: "maple/index.js",
-    treasury: "maple.js",
     twitter: "maplefinance",
+    parentProtocol: "parent#maple-finance",
     audit_links: ["https://github.com/maple-labs/maple-core#audit-reports"],
   },
   {
@@ -10918,7 +10966,7 @@ The eWIT token is a custodial, wrapped version of the Witnet coin managed by the
     module: "float-capital/index.js",
     twitter: "float_shipping",
     audit_links: ["https://code423n4.com/reports/2021-08-floatcapital"],
-    oracles: ["Chainlink"],
+    oracles: ["Chainlink", "RedStone"],
   },
   {
     id: "629",
@@ -11008,6 +11056,7 @@ The eWIT token is a custodial, wrapped version of the Witnet coin managed by the
     chains: ["Harmony"],
     module: "farmersonly/index.js",
     twitter: "FoxswapFi",
+    wrongLiquidity: true,
     audit_links: ["https://rugdoc.io/project/farmersonly/"],
   },
   {
@@ -13561,6 +13610,7 @@ The eWIT token is a custodial, wrapped version of the Witnet coin managed by the
     module: "fractional-art.js",
     twitter: "fractional_art",
     listedAt: 1635876350,
+    github: ['fractional-company'],
   },
   {
     id: "751",
@@ -19567,11 +19617,11 @@ The eWIT token is a custodial, wrapped version of the Witnet coin managed by the
   },
   {
     id: "1052",
-    name: "Astroport",
+    name: "Astroport Classic",
     address: "terra:terra1xj49zyqrwpv5k928jwfpfy2ha668nwdgkwlrg3",
-    symbol: "ASTRO",
+    symbol: "ASTROC",
     url: "https://astroport.fi",
-    description: "The meta AMM of Terra",
+    description: "The meta AMM of Cosmos",
     chain: "Terra",
     logo: `${baseIconsUrl}/astroport.jpg`,
     audits: "2",
@@ -19580,7 +19630,7 @@ The eWIT token is a custodial, wrapped version of the Witnet coin managed by the
     cmcId: "16304",
     category: "Dexes",
     chains: ["Terra"],
-    module: "astroport/index.js",
+    module: "astroport-classic/index.js",
     twitter: "astroport_fi",
     audit_links: ["https://github.com/astroport-fi/astro-audits"],
     openSource: true,
@@ -20542,7 +20592,7 @@ The eWIT token is a custodial, wrapped version of the Witnet coin managed by the
     gecko_id: "templardao",
     cmcId: "15288",
     category: "Reserve Currency",
-    chains: ["Binance", "Moonriver", "Harmony"],
+    chains: ["Binance"],
     module: "templar/api.js",
     treasury: "templar-dao.js",
     twitter: "TemplarDAO",
@@ -21147,7 +21197,7 @@ The eWIT token is a custodial, wrapped version of the Witnet coin managed by the
     cmcId: null,
     category: "Yield",
     chains: ["Cronos"],
-    module: "zeus/index.js",
+    module: "zeus-finance/index.js",
     twitter: "ZeusFinanceCro",
     listedAt: 1640718828,
   },
@@ -22523,8 +22573,9 @@ The eWIT token is a custodial, wrapped version of the Witnet coin managed by the
   {
     id: "1194",
     name: "Sperax USD",
-    address: "arbitrum:0xD74f5255D557944cf7Dd0E45FF521520002D5748",
-    symbol: "USDs",
+    address: "arbitrum:0x5575552988a3a80504bbaeb1311674fcfd40ad4b",
+    symbol: "SPA",
+    assetToken:"USDs",
     url: "http://sperax.io",
     description:
       "SperaxUSD (USDs) is a stablecoin and yield-automator on Arbitrum. USDs is 100% backed by collateral that is sent to DeFi strategies to produce a yield. This yield is then distributed to holders in a gasless manner, making compound interest easy.",
@@ -24227,6 +24278,7 @@ The eWIT token is a custodial, wrapped version of the Witnet coin managed by the
     twitter: "Cleopatra_DAO",
     forkedFrom: ["Olympus DAO"],
     listedAt: 1642404036,
+    rugged: true
   },
   {
     id: "1274",
@@ -25871,7 +25923,7 @@ The eWIT token is a custodial, wrapped version of the Witnet coin managed by the
     category: "Yield",
     chains: ["Binance"],
     module: "kalmy-app/index.js",
-    twitter: "kalmar_io",
+    twitter: "KalmyAPP",
     audit_links: [
       "https://hacken.io/wp-content/uploads/2021/06/Kalmar_08062021SC-Audit_Report.pdf",
       "https://hacken.io/wp-content/uploads/2021/04/03042021_Kalmar_SC_Audit_Report.pdf",
@@ -27123,6 +27175,6 @@ The eWIT token is a custodial, wrapped version of the Witnet coin managed by the
   // },
 ];
 
-const protocols = data.concat(data2)
+const protocols = data.concat(data2, data3)
 
 export default protocols

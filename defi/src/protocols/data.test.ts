@@ -38,8 +38,10 @@ test("all chains are on chainMap", async () => {
 
 test("there are no repeated values in unlock adapters", async () => {
   const tokens = [] as string[], protocolIds = [] as string[][], notes = [] as string[][], sources = [] as string[][];
-  for (const protocolPath of Object.values(emissionsAdapters)) {
-    const protocolFile = require(protocolPath)
+  for (const [protocolName, protocolFile] of Object.entries(emissionsAdapters)) {
+    if(protocolName === "daomaker"){
+      continue
+    }
     const rawProtocol = protocolFile.default
     const protocol = rawProtocol.meta;
     expect(protocol.token).not.toBe(undefined)

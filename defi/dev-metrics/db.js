@@ -1,7 +1,14 @@
 const { Sequelize, Model, DataTypes } = require('sequelize');
 
-const sequelize = new Sequelize('dev-metrics', 'llama', process.env.PG_DB_PASSWORD, {
-  host: 'localhost',
+const ENV = require('./env');
+const { owner_query, owner_query_contributers } = require('./db-scripts/queries');
+
+const sequelize = new Sequelize({
+  host: ENV.host,
+  port: ENV.port,
+  username: ENV.user,
+  password: ENV.password,
+  database: ENV.db_name,
   dialect: 'postgres',
   logging: (msg) => {
     // Log only error messages
@@ -12,7 +19,7 @@ const sequelize = new Sequelize('dev-metrics', 'llama', process.env.PG_DB_PASSWO
   },
 });
 
-class GitCommitRaw extends Model {}
+class GitCommitRaw extends Model { }
 GitCommitRaw.init(
   {
     sha: {
@@ -34,9 +41,12 @@ GitCommitRaw.init(
     sequelize,
     tableName: 'git_commit_raw',
     timestamps: true,
+    createdAt: 'createdat',
+    updatedAt: 'updatedat',
   }
 );
 
+/* 
 class GitCommitAuthor extends Model {}
 GitCommitAuthor.init(
   {
@@ -54,9 +64,9 @@ GitCommitAuthor.init(
     tableName: 'git_commit_author',
     timestamps: true,
   }
-);
+); */
 
-class GitArchive extends Model {}
+class GitArchive extends Model { }
 GitArchive.init(
   {
     archive_file: {
@@ -70,18 +80,22 @@ GitArchive.init(
     sequelize,
     tableName: 'git_archive',
     timestamps: true,
+    createdAt: 'createdat',
+    updatedAt: 'updatedat',
   }
 );
 
-class GitOwner extends Model {}
+class GitOwner extends Model { }
 GitOwner.init(
   {
     name: {
       type: DataTypes.STRING,
       primaryKey: true,
     },
-    lastUpdateTime: DataTypes.DATE,
-    linkedProjects: DataTypes.ARRAY(DataTypes.STRING),
+    lastupdatetime: {
+      type: DataTypes.DATE,
+    },
+    linkedprojects: DataTypes.ARRAY(DataTypes.STRING),
     is_org: DataTypes.BOOLEAN,
     is_missing: DataTypes.BOOLEAN,
     ecosystem: DataTypes.ARRAY(DataTypes.STRING),
@@ -90,10 +104,12 @@ GitOwner.init(
     sequelize,
     tableName: 'git_owner',
     timestamps: true,
+    createdAt: 'createdat',
+    updatedAt: 'updatedat',
   }
 );
 
-class GitRepo extends Model {}
+class GitRepo extends Model { }
 GitRepo.init(
   {
     name: DataTypes.STRING,
@@ -139,10 +155,12 @@ GitRepo.init(
     sequelize,
     tableName: 'git_repo',
     timestamps: true,
+    createdAt: 'createdat',
+    updatedAt: 'updatedat',
   }
 );
 
-class GitAuthor extends Model {}
+/* class GitAuthor extends Model {}
 GitAuthor.init(
   {
     id: {
@@ -199,6 +217,7 @@ GitCommit.init(
     timestamps: true,
   }
 );
+ */
 
 /**
  * Add a raw commit to the database if it doesn't exist
@@ -207,6 +226,10 @@ GitCommit.init(
  */
 async function addRawCommit(commit) {
   return GitCommitRaw.findOrCreate({ where: { sha: commit.sha }, defaults: commit })
+}
+
+async function addRawCommits(commits) {
+  return GitCommitRaw.bulkCreate(commits, { ignoreDuplicates: true })
 }
 
 /**
@@ -222,11 +245,39 @@ async function addArchiveData(archive_file, commit_count, filtered_commit_count)
   return GitArchive.create({ archive_file, commit_count, filtered_commit_count })
 }
 
-module.exports = {  
+async function getOrgMonthyAggregation({ orgs = [], repos = [] }) {
+  if (!orgs.length && !repos.length) throw new Error('No org or repo filter provided')
+  if (!orgs.length) orgs = null
+  if (!repos.length) repos = null
+
+  return sequelize
+    .query(owner_query, {
+      replacements: { orgs, repos },
+      type: Sequelize.QueryTypes.SELECT,
+    })
+}
+
+async function getOrgContributersMonthyAggregation({ orgs = [], repos = [] }) {
+  if (!orgs.length && !repos.length) throw new Error('No org or repo filter provided')
+  if (!orgs.length) orgs = null
+  if (!repos.length) repos = null
+  
+  return sequelize
+    .query(owner_query_contributers, {
+      replacements: { orgs, repos },
+      type: Sequelize.QueryTypes.SELECT,
+    })
+}
+
+module.exports = {
   GitOwner,
   GitRepo,
+  GitCommitRaw,
   addRawCommit,
+  addRawCommits,
   archiveExists,
   addArchiveData,
+  getOrgMonthyAggregation,
+  getOrgContributersMonthyAggregation,
   sequelize,
 }

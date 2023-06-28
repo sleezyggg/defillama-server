@@ -1,7 +1,10 @@
 export default {
   // wemix: require("./markets/uniswap"),
   dforce: require("./moneyMarkets/dforce"),
-  minswap: require("./markets/minswap"),
+  shlb: require("./other"),
+  // minswap: require("./markets/minswap"),
+  sundaeswap: require("./markets/sundaeswap"),
+  wingriders: require("./markets/wingriders"),
   metronome: require("./other"),
   ondo: require("./yield/ondo"),
   aave: require("./moneyMarkets/aave"),
@@ -49,6 +52,7 @@ export default {
   balancer1: require("./markets/balancer"),
   balancer2: require("./markets/balancer"),
   balancer3: require("./markets/balancer"),
+  linearPools: require("./markets/balancer"),
   hop: require("./markets/hop"),
   gauges: require("./markets/curve"),
   ankr: require("./liquidStaking/ankr"),
@@ -86,6 +90,7 @@ export default {
   mute: require("./markets/uniswap"),
   spacefi: require("./markets/uniswap"),
   gemswap: require("./markets/uniswap"),
+  extraUniV2Lps: require("./markets/uniswap"),
   stargate: require("./markets/stargate"),
   jarvis: require("./markets/jarvis"),
   chainlinkNFT: require("./nft/chainlink"),
@@ -103,4 +108,5 @@ export default {
   gmd: require("./other"),
   stkaurabal: require("./other"),
   glpDerivs: require("./yield/glpDerivs"),
+  pendle: require("./yield/pendle"),
 };

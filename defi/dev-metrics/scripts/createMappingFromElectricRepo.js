@@ -1,7 +1,8 @@
 const sdk = require('@defillama/sdk')
 const simpleGit = require('simple-git')
 const fs = require('fs')
-const cache = require('../cache')
+const cache = require('../utils/cache')
+const { setTomlFile } = require('../utils/r2')
 
 const path = require('path');
 const toml = require('toml');
@@ -51,7 +52,9 @@ async function cloneRepo() {
     }
   })
   sdk.log(orgData.length, Object.keys(repos).length, Object.keys(ecosystemData).length)
-  cache.writeJSON('tomlData.json', { orgData, repos, ecosystemData }, { compressed: false })
+  const tomlFile = { orgData, repos, ecosystemData }
+  await setTomlFile(tomlFile)
+  cache.writeJSON('tomlData.json', tomlFile, { compressed: false })
 }
 
 let i = 0
@@ -68,7 +71,7 @@ function crawlAndParseTomlFiles(folderPath) {
       // If it's a TOML file, read and parse its contents
       let fileData = fs.readFileSync(fullPath, 'utf8');
       let { title, sub_ecosystems = [], github_organizations = [], repo = [] } = toml.parse(fileData)
-      sdk.log('parsed', file, ++i)
+      // sdk.log('parsed', file, ++i)
       const data = {
         title,
         sub_ecosystems,
